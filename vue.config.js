@@ -10,14 +10,14 @@ module.exports = {
 			}
 		}
 	},
-	devServer: {
-		compress: true,
-		inline: true,
-		port: '8080',
-		allowedHosts: [
-			'*',
-			'vue-frontend-rhc-dmji6.ondigitalocean.app',
-			'www.realhomecompare.com'
-		]
-	  },
+	// devServer: {
+	// 	compress: true,
+	// 	inline: true,
+	// 	port: '8080',
+	// 	allowedHosts: [
+	// 		'*',
+	// 		'vue-frontend-rhc-dmji6.ondigitalocean.app',
+	// 		'www.realhomecompare.com'
+	// 	]
+	//   },
 }
