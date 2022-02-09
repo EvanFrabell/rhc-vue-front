@@ -1,0 +1,1505 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38019904,
+                    39.0977645
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0001-00",
+                "address": "2327 SUSSEX AVE",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38017556,
+                    39.097426
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0002-00",
+                "address": "2319 SUSSEX AVE",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38216514,
+                    39.09590114
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0003-00",
+                "address": "2270 SUFFOLK CIR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38188667,
+                    39.09650285
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0004-00",
+                "address": "2266 SUFFOLK ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.3819082,
+                    39.0963596
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0005-00",
+                "address": "2262 SUFFOLK ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38126707,
+                    39.09663075
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0006-00",
+                "address": "COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38101091,
+                    39.09656655
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0007-00",
+                "address": "6325 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38063066,
+                    39.09657545
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0008-00",
+                "address": "6335 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38038328,
+                    39.09640505
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0009-00",
+                "address": "6339 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37979159,
+                    39.09752104
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0010-00",
+                "address": "2334 SUSSEX AVE",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38200318,
+                    39.09532725
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0014-00",
+                "address": "2224 SUFFOLK ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38214978,
+                    39.0948234
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0015-00",
+                "address": "2220 SUFFOLK ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38160468,
+                    39.0944379
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0017-00",
+                "address": "6346 CORBLY RD",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37976267,
+                    39.09613785
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0019-00",
+                "address": "2250 SUSSEX AVE",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37880509,
+                    39.09653535
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0022-00",
+                "address": "6427 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37654672,
+                    39.0954237
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0028-00",
+                "address": "6560 CORBLY RD",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38204502,
+                    39.0957937
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0032-00",
+                "address": "2244 SUFFOLK ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38198996,
+                    39.09616035
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0033-00",
+                "address": "2252 SUFFOLK ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38082259,
+                    39.0970266
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0034-00",
+                "address": "6330 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38016559,
+                    39.09698615
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0035-00",
+                "address": "6344 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38042761,
+                    39.09698765
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0036-00",
+                "address": "6340 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38197187,
+                    39.09600795
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0037-00",
+                "address": "2248 SUFFOLK ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.3797702,
+                    39.0969756
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0038-00",
+                "address": "6404 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38101512,
+                    39.0945935
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0039-00",
+                "address": "6358 CORBLY RD",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.3821091,
+                    39.09504545
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0040-00",
+                "address": "2222 SUFFOLK ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38015452,
+                    39.0975474
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0041-00",
+                "address": "2321 SUSSEX AVE",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37959299,
+                    39.09695095
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0042-00",
+                "address": "6408 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38143877,
+                    39.09707285
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0043-00",
+                "address": "6316 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38011569,
+                    39.09792985
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0044-00",
+                "address": "2333 SUSSEX AVE",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38119467,
+                    39.0945445
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0045-00",
+                "address": "6354 CORBLY RD",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38104021,
+                    39.09703115
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0048-00",
+                "address": "6326 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38137506,
+                    39.0944864
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0050-00",
+                "address": "6350 CORBLY RD",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.3817964,
+                    39.0974274
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0051-00",
+                "address": "6308 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37968042,
+                    39.097317
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0053-00",
+                "address": "SUSSEX AVE",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37594596,
+                    39.09620135
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0056-00",
+                "address": "6600 CORBLY RD",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37960167,
+                    39.09782415
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0058-00",
+                "address": "2330 SUSSEX AVE",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38084206,
+                    39.09661855
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0059-00",
+                "address": "6329 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37960054,
+                    39.0974852
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0060-00",
+                "address": "2322 SUSSEX AVE",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38052391,
+                    39.09512885
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0061-00",
+                "address": "2221 SUSSEX AVE",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37934001,
+                    39.09700405
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0062-00",
+                "address": "6412 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.38050984,
+                    39.09495655
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0063-00",
+                "address": "2215 SUSSEX AVE",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37910803,
+                    39.09694605
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0064-00",
+                "address": "6416 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37781505,
+                    39.096879
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0065-00",
+                "address": "6450 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37769953,
+                    39.09704355
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0066-00",
+                "address": "6454 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37776172,
+                    39.09719435
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0067-00",
+                "address": "6458 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37772929,
+                    39.0973145
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0068-00",
+                "address": "6462 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37778791,
+                    39.0974919
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0069-00",
+                "address": "6466 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.3777448,
+                    39.0976529
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0070-00",
+                "address": "6470 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37778401,
+                    39.0978073
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0071-00",
+                "address": "6474 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37775106,
+                    39.09795345
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0072-00",
+                "address": "6478 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37778428,
+                    39.0980525
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0073-00",
+                "address": "6482 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37780455,
+                    39.0982553
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0074-00",
+                "address": "6486 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37727215,
+                    39.09738185
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0075-00",
+                "address": "6461 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37723634,
+                    39.09717335
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0077-00",
+                "address": "6504 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37703766,
+                    39.09714235
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0078-00",
+                "address": "6512 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37570926,
+                    39.0970732
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0079-00",
+                "address": "6540 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37551769,
+                    39.0970768
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0080-00",
+                "address": "6544 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37608824,
+                    39.0971074
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0082-00",
+                "address": "6532 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37589667,
+                    39.097097
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0083-00",
+                "address": "6536 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37727,
+                    39.09814045
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0084-00",
+                "address": "6485 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37665792,
+                    39.09713635
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0085-00",
+                "address": "6520 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37684804,
+                    39.09714615
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0086-00",
+                "address": "6516 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37646543,
+                    39.09714415
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0087-00",
+                "address": "6524 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37715051,
+                    39.0979002
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0088-00",
+                "address": "6504 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37731659,
+                    39.09800685
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0089-00",
+                "address": "6481 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37532102,
+                    39.09705365
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0090-00",
+                "address": "6548 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37671636,
+                    39.0967579
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0091-00",
+                "address": "6519 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37708504,
+                    39.09679145
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0092-00",
+                "address": "6511 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37614158,
+                    39.09673665
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0093-00",
+                "address": "6531 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37690883,
+                    39.0967611
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0094-00",
+                "address": "6515 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37820776,
+                    39.09648845
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0095-00",
+                "address": "6441 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37842412,
+                    39.09649125
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0096-00",
+                "address": "6435 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37595728,
+                    39.0967276
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0097-00",
+                "address": "6535 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37576705,
+                    39.0967177
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0098-00",
+                "address": "6539 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37557705,
+                    39.09670845
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0099-00",
+                "address": "6543 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37538707,
+                    39.0966632
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0100-00",
+                "address": "6547 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37633393,
+                    39.096747
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0101-00",
+                "address": "6527 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37652581,
+                    39.0967547
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0102-00",
+                "address": "6523 COFFEY ST",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.3777325,
+                    39.0983836
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0103-00",
+                "address": "6490 RAINBOW LN",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37623386,
+                    39.09747065
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0104-00",
+                "address": "6527 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.3770054,
+                    39.0975636
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0105-00",
+                "address": "6511 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37660097,
+                    39.09754545
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0106-00",
+                "address": "6519 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37641429,
+                    39.0975237
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0107-00",
+                "address": "6523 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37604708,
+                    39.0974459
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0108-00",
+                "address": "6531 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37585808,
+                    39.09742455
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0109-00",
+                "address": "6535 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37567073,
+                    39.09740235
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0110-00",
+                "address": "6539 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37548204,
+                    39.0973809
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0111-00",
+                "address": "6543 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37529439,
+                    39.0973573
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0112-00",
+                "address": "6547 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37525594,
+                    39.0977583
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0113-00",
+                "address": "6548 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37544128,
+                    39.09778625
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0114-00",
+                "address": "6544 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37582007,
+                    39.09782855
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0115-00",
+                "address": "6536 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37679059,
+                    39.097561
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0116-00",
+                "address": "6515 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37600711,
+                    39.09784965
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0117-00",
+                "address": "6532 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37619447,
+                    39.0978725
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0118-00",
+                "address": "6528 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37563093,
+                    39.0978086
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0119-00",
+                "address": "6540 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37755531,
+                    39.0952083
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0120-00",
+                "address": "6522 CORBLY RD",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.3763783,
+                    39.0979107
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0121-00",
+                "address": "6524 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37695991,
+                    39.09794055
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0122-00",
+                "address": "6512 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37676463,
+                    39.09790225
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0123-00",
+                "address": "6516 GRAF DR",
+                "zip_code": "45230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -84.37657145,
+                    39.09791685
+                ]
+            },
+            "properties": {
+                "parcel": "001-0001-0124-00",
+                "address": "6520 GRAF DR",
+                "zip_code": "45230"
+            }
+        }
+    ]
+}
