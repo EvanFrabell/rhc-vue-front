@@ -6,9 +6,7 @@
 					<h1>Contact</h1>
 				</div>
 				<div class="content">
-					<p>Aaron Friedman (account executive) - aaron365@gmail.com</p>
-					<p>Jeremy Siegle (software developer) - SiegleJP@yahoo.com</p>
-					<p>Evan Frabell (software developer) - epfrabell@gmail.com</p>
+					<p>Don't call us, we'll call you</p>
 				</div>
 			</div>
 		
