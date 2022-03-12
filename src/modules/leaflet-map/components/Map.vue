@@ -209,7 +209,7 @@ export default {
     "v-marker": Vue2Leaflet.LMarker,
   },
 	mounted() {
-		axios.get('http://localhost:8888/rhc/api/properties/address').then(response => {  
+		axios.get('https://rhc-backend.herokuapp.com/rhc/api/properties/address').then(response => {  
 			let addList = response.data;
 			let addresses = [];
 			let i = 0, len = addList.length;
@@ -244,11 +244,11 @@ export default {
 
 			let url = '';
 			if (this.selectedOption == 'Address') {
-				url = `http://localhost:8888/rhc/api/properties/address-radius?address=${this.searchText}`;
+				url = `https://rhc-backend.herokuapp.com/rhc/api/properties/address-radius?address=${this.searchText}`;
 			} else if (this.selectedOption == 'Zip Code') {
-				url = `http://localhost:8888/rhc/api/properties/zipcode?zipcode=${this.searchText}`
+				url = `https://rhc-backend.herokuapp.com/rhc/api/properties/zipcode?zipcode=${this.searchText}`
 			} else {
-				url = `http://localhost:8888/rhc/api/properties/city-state?city=Cincinnati&state=OH`;
+				url = `https://rhc-backend.herokuapp.com/rhc/api/properties/city-state?city=Cincinnati&state=OH`;
 			}
 			console.log(url);
 			this.axiosGetter(url);
