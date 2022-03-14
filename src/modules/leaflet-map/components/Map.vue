@@ -335,6 +335,7 @@ export default {
      * @param {string} inputValue - The value from search input.
      * @param {string} selectedSearchOptionType - The value of selected checkbox from searchOptions.
      **/
+    //  Do we need above?
     //  inputType is the value in searchOptions object
     searchForProperties(inputValue, selectedSearchOptionType) {
       this.selectedSearchOptionType = selectedSearchOptionType;
