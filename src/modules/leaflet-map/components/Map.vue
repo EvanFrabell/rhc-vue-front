@@ -362,11 +362,11 @@ export default {
       getFeaturesByRadius: MapActions.FEATURES_BY_RADIUS,
       setSelectedFeature: MapActions.FEATURE_SELECTED,
     }),
-		// exportExcel(type, fn, dl) {
-		// 	var elt = this.$refs.exportable_table;
-		// 	var wb = XLSX.utils.table_to_book(elt, { sheet: "Home Compare" });
-		// 	return dl ? XLSX.write(wb, { bookType: type, bookSST: true, type: "base64" }) : XLSX.writeFile(wb,fn || (this.searchText + "." || "HomeCompare.") + (type || "xlsx"));
-		// 	},
+		exportExcel(type, fn, dl) {
+			var elt = this.$refs.exportable_table;
+			var wb = XLSX.utils.table_to_book(elt, { sheet: "Home Compare" });
+			return dl ? XLSX.write(wb, { bookType: type, bookSST: true, type: "base64" }) : XLSX.writeFile(wb,fn || (this.searchText + "." || "HomeCompare.") + (type || "xlsx"));
+			},
 	},
   computed: {
 		...mapGetters(["maxFeatures", "featuresByZipCode"]),
