@@ -86,7 +86,15 @@
 		<b-row>
       <b-col>
         <div class="table-margin">
-          <b-button class="alert alert-success" id="export-excel" @click="exportExcel('xlsx')" v-b-popover.hover.top="'Export to Excel to see more data!'" title="Export to Excel">Export to Excel</b-button>
+          <vue-excel-xlsx class="alert alert-success" id="export-excel"
+            :data="propyData"
+            :columns="columns"
+            :filename="searchText"
+            :file-type="'xlsx'"
+            :sheetname="'Real Home Compare'"
+            >
+            Export to Excel
+          </vue-excel-xlsx>
             <table ref="exportable_table" class="table table-dark">
               <thead>
                 <tr id="tr-head">
@@ -182,6 +190,22 @@ export default {
       feature: {},
       zoom: 10,
       searchToggle: false,
+      fileName: 'Real Home Compare',
+      columns: [
+                  {label: "Address", field: "address",},
+                  {label: "Finished SqFt", field: "",},
+                  {label: "RHC Price per SqFt", field: "rhcPsf",},
+                  {label: "Last Sale Price per SqFt", field: "",},
+                  {label: "Last Sale Amount", field: "",},
+                  {label: "Last Sale Date", field: "",},
+                  {label: "Appraisal Price per SqFt", field: "",},
+                  {label: "Appraisal Sale Amount", field: "appraisalSale",},
+                  {label: "Last Appraisal Date", field: "",},
+                  {label: "Zip Code", field: "",},
+                  {label: "Total Rooms", field: "",},
+                  {label: "Baths", field: "",},
+                  {label: "Auditor Link", field: "parcelId",},
+      ],
       tileLayer: {
         url: "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXZhbmZyYWJlbGwiLCJhIjoiY2tqOTM1bzZoMWFnMDJycWd2eGJ4aTJ0MCJ9.r-KG-MMBYVUX3BGbvKLuLQ",
         options: {
@@ -264,6 +288,8 @@ export default {
 						this.propyData.push(this.geoData.features[i].properties);
 					}
 				}
+        console.log(this.geoData)
+        console.log(this.propyData)
         
         // this.rhcFactor();
 
@@ -363,11 +389,6 @@ export default {
       getFeaturesByRadius: MapActions.FEATURES_BY_RADIUS,
       setSelectedFeature: MapActions.FEATURE_SELECTED,
     }),
-		exportExcel(type, fn, dl) {
-			var elt = this.$refs.exportable_table;
-			var wb = XLSX.utils.table_to_book(elt, { sheet: "Home Compare" });
-			return dl ? XLSX.write(wb, { bookType: type, bookSST: true, type: "base64" }) : XLSX.writeFile(wb,fn || (this.searchText + "." || "HomeCompare.") + (type || "xlsx"));
-			},
 	},
   computed: {
 		...mapGetters(["maxFeatures", "featuresByZipCode"]),

@@ -11,6 +11,7 @@ import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import { Icon } from "leaflet";
 import "@/assets/global.css";
+import VueExcelXlsx from "vue-excel-xlsx";
 
 Vue.config.productionTip = false;
 
@@ -30,6 +31,8 @@ const firebaseApp = initializeApp({
   appId: "1:319424790358:web:b9c750c5c76724850ae0f7",
   measurementId: "G-KL5GJFX30H",
 });
+
+Vue.use(VueExcelXlsx);
 
 new Vue({
   router,
