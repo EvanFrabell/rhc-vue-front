@@ -9,7 +9,12 @@
 					<p>Don't call us, we'll call you</p>
 				</div>
 			</div>
-		
 		</div>
 	</div>
 </template>
+
+
+<script>
+export default {
+};
+</script>

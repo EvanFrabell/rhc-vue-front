@@ -95,30 +95,50 @@
             >
             Export to Excel
           </vue-excel-xlsx>
-            <table ref="exportable_table" class="table table-dark">
+            <table ref="exportable_table" class="table table-dark" id="sortTable">
               <thead>
                 <tr id="tr-head">
-                  <th class="align-middle">Address</th>
-                  <th class="align-middle">Finished sqft</th>
-                  <th class="align-middle">
-                    <b-button class="btn btn-dark font-weight-bold" v-b-popover.hover.top="'Real Home Compare Price per Sq.Ft.'" title="Real Home Compare PsF">RHC-PsF</b-button>
+                  <th class="align-middle" style="cursor:pointer" id="nameClick">
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(0)">Address</b-button>
+                  </th>
+                  <th class="align-middle"> 
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(1)">Finished sqft</b-button>
                   </th>
                   <th class="align-middle">
-                    <b-button class="btn btn-dark font-weight-bold" v-b-popover.hover.top="'Last Sale Price per Sq.Ft.'" title="Last Sale PsF">LS-PsF</b-button>
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(2)" v-b-popover.hover.top="'Real Home Compare Price per Sq.Ft.'" title="Real Home Compare PsF">RHC-PsF</b-button>
                   </th>
-                  <th class="align-middle">Last Sale Amount</th>
-                  <th class="align-middle">Last Sale Date</th>
                   <th class="align-middle">
-                    <b-button class="btn btn-dark font-weight-bold" v-b-popover.hover.top="'Appraisal Price per Sq.Ft.'" title="Appraisal PsF">A-PsF</b-button>
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(3)" v-b-popover.hover.top="'Last Sale Price per Sq.Ft.'" title="Last Sale PsF">LS-PsF</b-button>
                   </th>
-                  <th class="align-middle">Appraisal Sale Amount</th>
-                  <th class="align-middle">Last Appraisal Date</th>
-                  <th class="align-middle">Zip Code</th>
-                  <th class="align-middle" style="display:none;">Year Built</th>
-                  <th class="align-middle">Total Rooms</th>
+                  <th class="align-middle">
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(4)">Last Sale Amount</b-button></th>
+                  <th class="align-middle">
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(5)">Last Sale Date</b-button></th>
+                  <th class="align-middle">
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(6)" v-b-popover.hover.top="'Appraisal Price per Sq.Ft.'" title="Appraisal PsF">A-PsF</b-button>
+                  </th>
+                  <th class="align-middle">
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(7)">Appraisal Sale Amount</b-button>
+                  </th>
+                  <th class="align-middle">
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(8)">Last Appraisal Date</b-button>
+                  </th>
+                  <th class="align-middle">
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(9)">Zip Code</b-button>
+                  </th>
+                  <th class="align-middle" style="display:none;">
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(10)">Year Built</b-button>
+                  </th>
+                  <th class="align-middle">
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(11)">Total Rooms</b-button>
+                  </th>
                   <th class="align-middle" style="display:none;">Bedrooms</th>
-                  <th class="align-middle">Baths</th>
-                  <th class="align-middle">Auditor Link</th>
+                  <th class="align-middle">
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(12)">Baths</b-button>
+                  </th>
+                  <th class="align-middle">
+                    <b-button class="btn btn-dark font-weight-bold" @click="sortTable(13)">Auditor Link</b-button>
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -284,10 +304,13 @@ export default {
 				for (let i = 0; i < this.geoData.features.length; i++) {
 					if (this.searchText == this.geoData.features[i].properties.address) {
 						this.propyData.unshift(this.geoData.features[i].properties);
-					} else {
+					} else if (this.propyData.length > 350) {
+            break;
+          } else {
 						this.propyData.push(this.geoData.features[i].properties);
 					}
 				}
+        console.log(this.propyData.length)
         console.log(this.geoData)
         console.log(this.propyData)
         
@@ -389,6 +412,65 @@ export default {
       getFeaturesByRadius: MapActions.FEATURES_BY_RADIUS,
       setSelectedFeature: MapActions.FEATURE_SELECTED,
     }),
+    sortBy: function(sortKey) {
+      this.reverse = (this.sortKey == sortKey) ? ! this.reverse : false;
+
+      this.sortKey = sortKey;
+    },
+     sortTable: function (n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.getElementById("sortTable");
+      switching = true;
+      // Set the sorting direction to ascending:
+      dir = "asc";
+      /* Make a loop that will continue until
+      no switching has been done: */
+      while (switching) {
+        // Start by saying: no switching is done:
+        switching = false;
+        rows = table.rows;
+        /* Loop through all table rows (except the
+        first, which contains table headers): */
+        for (i = 1; i < (rows.length - 1); i++) {
+          // Start by saying there should be no switching:
+          shouldSwitch = false;
+          /* Get the two elements you want to compare,
+          one from current row and one from the next: */
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          /* Check if the two rows should switch place,
+          based on the direction, asc or desc: */
+          if (dir == "asc") {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              // If so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+              // If so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          /* If a switch has been marked, make the switch
+          and mark that a switch has been done: */
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          // Each time a switch is done, increase this count by 1:
+          switchcount ++;
+        } else {
+          /* If no switching has been done AND the direction is "asc",
+          set the direction to "desc" and run the while loop again. */
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    },
 	},
   computed: {
 		...mapGetters(["maxFeatures", "featuresByZipCode"]),
@@ -432,7 +514,6 @@ export default {
       return _.upperFirst(this.selectedSearchOptionType.toString());
     },
   },
-  
 }
 </script>
 
