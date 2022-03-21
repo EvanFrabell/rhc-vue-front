@@ -87,7 +87,7 @@
       <b-col>
         <div class="table-margin">
           <vue-excel-xlsx class="alert alert-success" id="export-excel"
-            :data="propyData"
+            :data="excelData"
             :columns="columns"
             :filename="searchText"
             :file-type="'xlsx'"
@@ -157,7 +157,7 @@
                   <td class="text-center">{{propy.totalRooms}}</td>
                   <td class="text-center" style="display:none;">{{propy.bedrooms}}</td>
                   <td class="text-center">{{propy.fullBath}}</td>
-                  <td class="text-center"><a v-bind:href="'https://wedge.hcauditor.org/view/re/' + propy.parcelId + '/2020/summary'" target="_blank">{{propy.parcelId}}</a></td>
+                  <td class="text-center"><a v-bind:href="'https://wedge.hcauditor.org/view/re/' + propy.parcelId + '/2021/summary'" target="_blank">{{propy.parcelId}}</a></td>
                 </tr>
               </tbody>
             </table>
@@ -202,6 +202,7 @@ export default {
       rhcValue: 0,
 			geoData: {},
 			propyData: [],
+      excelData: [],
 			tableDataType: FeatureProperties,
       selectedSearchOptionType: "",
       searchInputValue: "",
@@ -224,7 +225,7 @@ export default {
                   {label: "Zip Code", field: "zipCode",},
                   {label: "Total Rooms", field: "totalRooms",},
                   {label: "Baths", field: "fullBath",},
-                  {label: "Auditor Link", field: "parcelId",},
+                  {label: "Auditor Link", field: "parcelId", dataFormat: this.parcelLink},
       ],
       tileLayer: {
         url: "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXZhbmZyYWJlbGwiLCJhIjoiY2tqOTM1bzZoMWFnMDJycWd2eGJ4aTJ0MCJ9.r-KG-MMBYVUX3BGbvKLuLQ",
@@ -302,17 +303,23 @@ export default {
 			axios.get(path).then(response => {  
 				this.geoData = response.data;
 				for (let i = 0; i < this.geoData.features.length; i++) {
+          this.excelData.push(this.geoData.features[i].properties);
+
 					if (this.searchText == this.geoData.features[i].properties.address) {
 						this.propyData.unshift(this.geoData.features[i].properties);
-					} else if (this.propyData.length > 350) {
-            break;
+					} else if (this.propyData.length >= 150) {
+            continue;
           } else {
 						this.propyData.push(this.geoData.features[i].properties);
 					}
+          
 				}
-        console.log(this.propyData.length)
+        
         console.log(this.geoData)
+        console.log(this.propyData.length)
         console.log(this.propyData)
+        console.log(this.excelData.length)
+        console.log(this.excelData)
         
         // this.rhcFactor();
 
@@ -347,6 +354,7 @@ export default {
     clearMap() {
       this.geoData = {};
       this.propyData = [];
+      this.excelData = [];
       // this.rhcValue = 0;
     },
 		mapReady(map) {
@@ -412,12 +420,10 @@ export default {
       getFeaturesByRadius: MapActions.FEATURES_BY_RADIUS,
       setSelectedFeature: MapActions.FEATURE_SELECTED,
     }),
-    sortBy: function(sortKey) {
-      this.reverse = (this.sortKey == sortKey) ? ! this.reverse : false;
-
-      this.sortKey = sortKey;
+    parcelLink: function(value) {
+      return 'https://wedge.hcauditor.org/view/re/' + value + '/2021/summary'
     },
-     sortTable: function (n) {
+    sortTable: function (n) {
       var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
       table = document.getElementById("sortTable");
       switching = true;
