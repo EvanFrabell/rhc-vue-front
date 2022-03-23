@@ -38,7 +38,8 @@ const firebaseApp = initializeApp({
 Vue.use(VueExcelXlsx);
 
 Vue.use(VueAnalytics, {
-  id: 'G-KL5GJFX30H'
+  id: 'G-KL5GJFX30H',
+  router
 });
 
 new Vue({
