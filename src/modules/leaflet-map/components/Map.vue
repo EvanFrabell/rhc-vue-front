@@ -300,7 +300,7 @@ export default {
       
 		},
 		axiosGetter(path) {
-			axios.get(path).then(response => {  
+			axios.get(path, {headers:{"x-rhc-projection":"TABLE"}}).then(response => { 
 				this.geoData = response.data;
 				for (let i = 0; i < this.geoData.features.length; i++) {
           this.excelData.push(this.geoData.features[i].properties);
