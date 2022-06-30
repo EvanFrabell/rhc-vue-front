@@ -1,5 +1,5 @@
 .nav {
-  background-color: rgb(17, 87, 87);
+  background-color: rgb(11, 60, 60);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -23,6 +23,10 @@
       a {
         color: white;
       }
+    }
+
+    .btn {
+      background-color: lightgrey;
     }
   }
 }

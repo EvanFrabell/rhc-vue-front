@@ -17,7 +17,7 @@
         <router-link to="/register" class="">Register</router-link>
       </li>
       <li v-if="loggedIn">
-        <button @click="signOut" class="btn btn-dark">Logout</button>
+        <button @click="signOut" class="btn">Logout</button>
       </li>
     </ul>
   </nav>
