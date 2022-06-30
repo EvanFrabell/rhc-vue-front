@@ -1,56 +1,56 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 // import { getAuth } from "firebase/auth";
 
 Vue.use(VueRouter);
 
 const Login = () => {
-  return import(/* webpackChunkName: "users" */ "@/views/Login.vue");
+  return import(/* webpackChunkName: "users" */ '@/views/Login/index.vue');
 };
 const Register = () => {
-  return import(/* webpackChunkName: "users" */ "@/views/Register.vue");
+  return import(/* webpackChunkName: "users" */ '@/views/Register/index.vue');
 };
 const Home = () => {
-  return import(/* webpackChunkName: "users" */ "@/views/Home.vue");
+  return import(/* webpackChunkName: "users" */ '@/views/Home/index.vue');
 };
 const Contact = () => {
-  return import(/* webpackChunkName: "users" */ "@/views/Contact.vue");
+  return import(/* webpackChunkName: "users" */ '@/views/Contact/index.vue');
 };
 const Main = () => {
-  return import(/* webpackChunkName: "users" */ "@/views/Main.vue");
+  return import(/* webpackChunkName: "users" */ '@/views/Main.vue');
 };
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
+    path: '/',
+    name: 'Home',
     component: Home,
   },
   {
-    path: "/login",
-    name: "Login",
+    path: '/login',
+    name: 'Login',
     component: Login,
   },
   {
-    path: "/register",
-    name: "Register",
+    path: '/register',
+    name: 'Register',
     component: Register,
   },
   {
-    path: "/main",
-    name: "Main",
+    path: '/main',
+    name: 'Main',
     component: Main,
     meta: { requiresAuth: true },
   },
   {
-    path: "/contact",
-    name: "Contact",
+    path: '/contact',
+    name: 'Contact',
     component: Contact,
   },
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   routes,
 });

@@ -8,16 +8,14 @@
 </template>
 
 <script>
-import RhcNav from "@/components/AppNav";
+import RhcNav from '@/components/RhcNav/index.vue';
 
 export default {
-  name: "app",
+  name: 'app',
   components: {
     RhcNav,
   },
 };
 </script>
 
-<style>
- 
-</style>
+<style></style>
