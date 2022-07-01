@@ -1,10 +1,19 @@
 .login {
-  background: url('../../assets/Real\ estate\ deals\ between\ agent\ and\ client\ shaking\ hands.jpg');
-  background-size: 1140px;
-  background-repeat: no-repeat;
-  background-position-y: top left;
-  background-position: center;
-  background-color: white;
+  // background: url('../../assets/loginHouse.jgp');
+  // background-size: 1140px;
+  // background-repeat: no-repeat;
+  // background-position-y: top left;
+  // background-position: center;
+  // background-color: white;
+
+  .house {
+    width: 1140px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
 }
 
 .card {
@@ -12,4 +21,5 @@
   box-shadow: 0 6px 6px -2px gray;
   position: relative;
   right: 0.5rem;
+  z-index: 100;
 }
