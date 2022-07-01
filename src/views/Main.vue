@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Map from "@/modules/leaflet-map/components/Map";
+import Map from "@/components/Map/index.vue";
 
 export default {
   name: "Main",
