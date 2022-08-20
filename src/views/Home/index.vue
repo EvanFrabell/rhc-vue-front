@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <div class="home-title">
       <h1 id="main-title">REAL HOME COMPARE</h1>
       <h4 id="sub-title">Open Testing for Hamilton County</h4>
@@ -41,8 +41,8 @@
         to use in front of clients, but also a multi-purpose tool that tells you
         everything you need to know about a home's worth.
       </p> -->
-      <!-- Graph - Example: RHC value compared with income of buyer. | city RHC Value  -->
-      <!-- <p>
+    <!-- Graph - Example: RHC value compared with income of buyer. | city RHC Value  -->
+    <!-- <p>
         Our product:
       </p>
       <ul>
@@ -55,27 +55,11 @@
         <li>City RHC Value® = Indicates the standard of living and average RHC Value® of the area.</li>
         <li>Daily Updates = We have a team of data and automation experts tracking houses being sold everyday.</li>
         <li>Constant Feature Additions = We're growing and listen closely to the needs of realtors to make sure we have the best tools available.</li> -->
-        <!-- Need income calculator next update -->
-      <!-- </ul>
+    <!-- Need income calculator next update -->
+    <!-- </ul>
     </div> -->
   </div>
 </template>
 
-<script>
-export default {
-  name: "Home",
-  components: {},
-};
-</script>
-
-<style>
-.home-title {
-  margin: 10% auto;
-  width: 50%;
-  text-align: center;
-}
-
-#main-title {
-  font-weight: bold;
-}
-</style>
+<script src="./home.js"></script>
+<style src="./home.scss" lang="scss"></style>

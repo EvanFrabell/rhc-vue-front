@@ -1,0 +1,33 @@
+.nav {
+  background-color: rgb(11, 60, 60);
+  background-color: rgb(14, 79, 123);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2.5rem 0.25rem 2.5rem;
+
+  &_logo a {
+    color: white;
+    margin-bottom: 0;
+  }
+
+  &_options {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    li {
+      padding: 0 1rem;
+      color: white;
+
+      a {
+        color: white;
+      }
+    }
+
+    .btn {
+      background-color: lightgrey;
+    }
+  }
+}
