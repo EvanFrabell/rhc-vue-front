@@ -1,0 +1,29 @@
+.summary {
+  display: flex;
+  justify-content: center;
+  row-gap: 2rem;
+  color: black;
+  padding-bottom: 0rem;
+  &-min,
+  &-average {
+    margin-right: 7rem;
+  }
+  .heading {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  h4 {
+    margin: 0;
+    position: relative;
+    bottom: 1rem;
+    font-style: italic;
+  }
+
+  span {
+    font-size: 1.75rem;
+    font-weight: bold;
+    position: relative;
+    bottom: 0.75rem;
+  }
+}

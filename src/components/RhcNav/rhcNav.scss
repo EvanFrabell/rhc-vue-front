@@ -1,0 +1,32 @@
+.nav {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2.5rem 0.25rem 2.5rem;
+  z-index: 99;
+
+  &_logo a {
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+
+  &_options {
+    font-family: Arial, Helvetica, sans-serif;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    li {
+      padding: 0 1rem;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
