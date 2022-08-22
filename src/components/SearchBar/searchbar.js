@@ -17,10 +17,10 @@ export default {
       geoData: {},
       hasReset: false,
       map: null,
-      searchOptions: ['City, State', 'Address', 'Zip Code'],
+      searchOptions: ['Address', 'Zip Code'],
       searchText: null,
       selectedFeature: [],
-      selectedOption: 'City, State',
+      selectedOption: 'Zip Code',
       url: '',
     };
   },
@@ -65,14 +65,21 @@ export default {
     },
     async updateMap() {
       this.hasReset = false;
+      // reset results
+      this.$store.state.features = [];
+      this.geoData = [];
+      // fetch new results
       this.getUrlAndSetFeatures();
       switch (this.selectedOption) {
         case 'Address':
           this.geoData = await this.GEO_DATA_BY_ADDRESS(this.url);
-          this.coordList = this.geoData.map((data, idx) => ({
-            coords: data.coordinates,
-            id: idx,
-          }));
+          this.coordList = this.geoData
+            .map((data, idx) => ({
+              coords: data.coordinates,
+              id: idx,
+            }))
+            .slice(0, 100)
+            .reverse();
           this.$emit('coordUpdate', this.coordList);
           break;
         case 'City, State':
@@ -86,10 +93,13 @@ export default {
           break;
         case 'Zip Code':
           this.geoData = await this.GEO_DATA_BY_ZIPCODE(this.url);
-          this.coordList = this.geoData.map((data, idx) => ({
-            coords: data.coordinates,
-            id: idx,
-          }));
+          this.coordList = this.geoData
+            .map((data, idx) => ({
+              coords: data.coordinates,
+              id: idx,
+            }))
+            .slice(0, 100)
+            .reverse();
           this.coordList = this.coordList.splice(0, 250);
           this.$emit('coordUpdate', this.coordList);
           break;
@@ -97,7 +107,7 @@ export default {
           break;
       }
 
-      this.coordList = this.coordList.slice(0, 100);
+      // this.coordList = this.coordList.slice(0, 100);
       console.log('coordlist is now ', this.coordList);
     },
     getUrlAndSetFeatures() {
@@ -110,7 +120,6 @@ export default {
       } else {
         let city = this.searchText.split(',')[0].trim();
         let state = this.searchText.split(',')[1].trim();
-        console.log('city', city, ' state ', state);
         this.url = `https://rhc-backend.herokuapp.com/rhc/api/properties/city-state?city=${city}&state=${state}`;
         this.FEATURES_BY_CITY_AND_STATE(this.url);
       }
