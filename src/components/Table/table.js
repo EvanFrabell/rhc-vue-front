@@ -100,6 +100,10 @@ export default {
       });
   },
   methods: {
+    clearFilters() {
+      this.filteredFeatures = this.$store.state.features;
+      this.filterDialog = false;
+    },
     customSort(rows, sortBy, descending) {
       const data = [...rows];
 

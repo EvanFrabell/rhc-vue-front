@@ -16,7 +16,10 @@
       transition-show="slide-up"
       transition-hide="slide-down"
     >
-      <TableFilters @update:filters="updateTable" />
+      <TableFilters
+        @update:filters="updateTable"
+        @clear:filters="clearFilters"
+      />
     </q-dialog>
     <q-table
       class="my-sticky-header-table"

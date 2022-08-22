@@ -81,12 +81,13 @@
           />
         </div>
       </q-card-section> -->
-      <q-card-actions vertical align="center" class="q-mt-md">
+      <q-card-actions class="q-mt-md actions">
         <q-btn
           label="Apply"
-          color="black"
+          color="blue"
           @click="$emit('update:filters', filters)"
         />
+        <q-btn label="Clear" color="black" @click="$emit('clear:filters')" />
       </q-card-actions>
     </q-card>
   </div>

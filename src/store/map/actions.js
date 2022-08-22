@@ -96,12 +96,11 @@ export const actions = {
       await axios
         .get(addressUrl, { headers: { 'x-rhc-projection': 'TABLE' } })
         .then((response) => {
-          console.log('from action', response.data);
-          commit(
-            MapMutations.SET_FEATURES,
-            new Array(response.data.features[0])
-          );
-          resolve(response.data.features[0].properties);
+          console.log('from features_by_address action', response.data);
+          commit(MapMutations.SET_FEATURES, {
+            features: response.data.features.map((f) => f.properties),
+          });
+          resolve(response.data.features.map((f) => f.properties));
         });
     });
   },

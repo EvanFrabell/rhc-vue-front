@@ -42,7 +42,10 @@ export default {
     customPane.style.zIndex = 9999; // put just behind the standard overlay pane which is at 400
 
     this.latlong.forEach(({ coords, id }) =>
-      L.marker([coords[0], coords[1]]).addTo(this.map)
+      L.marker([coords[0], coords[1]])
+        .addTo(this.map)
+        .bindPopup(this.addPopups(this.$store.state.features[id]))
+        .openPopup()
     );
 
     // L.marker([10, -25]).addTo(this.map);
@@ -60,7 +63,7 @@ export default {
         'Address: ' +
         feature.address +
         '</br>' +
-        'RHC Value: $' +
+        'Appraisal: $' +
         feature.appraisalSale.toLocaleString('en-Us') +
         '</br>' +
         '$/SqFt: $' +

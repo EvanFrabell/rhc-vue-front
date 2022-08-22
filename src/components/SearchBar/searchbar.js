@@ -81,6 +81,7 @@ export default {
             coords: data.coordinates,
             id: idx,
           }));
+          this.coordList = this.coordList.splice(0, 250);
           this.$emit('coordUpdate', this.coordList);
           break;
         case 'Zip Code':
@@ -89,6 +90,7 @@ export default {
             coords: data.coordinates,
             id: idx,
           }));
+          this.coordList = this.coordList.splice(0, 250);
           this.$emit('coordUpdate', this.coordList);
           break;
         default:
