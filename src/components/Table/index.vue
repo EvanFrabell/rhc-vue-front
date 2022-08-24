@@ -196,5 +196,5 @@
   </div>
 </template>
 
-<script src="./table.js"></script>
+<script src="@/components/Table/table.js"></script>
 <style src="./table.scss" lang="scss"></style>

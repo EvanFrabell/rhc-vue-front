@@ -92,5 +92,5 @@
     </q-card>
   </div>
 </template>
-<script src="./table-filters.js"></script>
+<script src="@/components/TableFilters/table-filters.js"></script>
 <style src="./table-filters.scss" lang="scss"></style>

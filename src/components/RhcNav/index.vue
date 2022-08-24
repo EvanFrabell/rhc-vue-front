@@ -32,5 +32,5 @@
   </nav>
 </template>
 
-<script src="./rhcNav.js"></script>
+<script src="@/components/RhcNav/rhcNav.js"></script>
 <style src="./rhcNav.scss" lang="scss"></style>
