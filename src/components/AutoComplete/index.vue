@@ -41,5 +41,5 @@
   </div>
 </template>
 
-<script src="@/components/Autocomplete/autocomplete.js"></script>
+<script src="./autocomplete.js"></script>
 <style src="./autocomplete.scss" lang="scss"></style>
