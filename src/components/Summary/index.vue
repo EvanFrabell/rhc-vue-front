@@ -20,4 +20,4 @@
 </template>
 
 <script src="./summary.js"></script>
-<style src="./summary.scss" lang="scss"></style>
+<!-- <style src="./summary.scss" lang="scss"></style> -->
