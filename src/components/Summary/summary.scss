@@ -27,3 +27,11 @@
     bottom: 0.75rem;
   }
 }
+.tooltip {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-style: normal;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}

@@ -30,7 +30,7 @@ export default {
   mounted() {
     this.map = L.map('mapContainer').setView(
       [BASE_COORDS.LAT, BASE_COORDS.LONG],
-      8
+      12
     );
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution:
@@ -75,7 +75,7 @@ export default {
   watch: {
     latlong(newVal, oldVal) {
       if (newVal !== oldVal) {
-        this.map.setView([newVal[0].coords[0], newVal[0].coords[1]], 8);
+        this.map.setView([newVal[0].coords[0], newVal[0].coords[1]], 12);
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
           attribution:
             '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',

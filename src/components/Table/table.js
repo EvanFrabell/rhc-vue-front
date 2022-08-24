@@ -11,7 +11,7 @@ export default {
       maximizedToggle: false,
       columns: [
         {
-          name: 'Address',
+          name: 'address',
           required: true,
           label: 'Address',
           align: 'left',
@@ -20,50 +20,56 @@ export default {
           sortable: true,
         },
         {
+          name: 'finishedSqFt',
           label: 'Finished SqFt',
           field: (tableData) => tableData.finishedSqFt,
           format: (val) => `${val}`,
           sortable: true,
-          sort: (a, b) => parseInt(a, 10) - parseInt(b, 10),
         },
         {
+          name: 'rhcPsf',
           label: 'RHC Price per SqFt',
           field: (tableData) => tableData.rhcPsf,
+          sortable: true,
         },
         {
-          label: 'Last Sale Price per SqFt',
-          field: 'lastSalePsf',
-          format: (val) => '$' + val.toLocaleString('en-Us'),
-        },
-        {
+          name: 'lastSaleAmount',
           label: 'Last Sale Amount',
           field: 'lastSaleAmount',
           format: (val) => '$' + val.toLocaleString('en-Us'),
-        },
-        { label: 'Last Sale Date', field: 'lastSaleDate' },
-        {
-          label: 'Appraisal Price per SqFt',
-          field: 'appraisalPsf',
-          format: (val) => '$' + val.toLocaleString('en-Us'),
+          sortable: true,
         },
         {
+          name: 'lastSaleDate',
+          label: 'Last Sale Date',
+          field: 'lastSaleDate',
+          sortable: true,
+        },
+        {
+          name: 'appraisalSale',
           label: 'Appraisal Sale Amount',
           field: (tableData) => tableData.appraisalSale,
           format: (val) => '$' + val.toLocaleString('en-Us'),
+          sortable: true,
         },
-        { label: 'Last Appraisal Date', field: 'appraisalDate' },
+        {
+          name: 'appraisalDate',
+          label: 'Last Appraisal Date',
+          field: 'appraisalDate',
+          sortable: true,
+        },
         { label: 'Zip Code', field: 'zipCode' },
         {
-          label: 'Total Rooms',
-          field: (tableData) => tableData.totalRooms,
+          name: 'bedrooms',
+          label: 'BedRooms',
+          field: (tableData) => tableData.bedrooms,
           sortable: true,
-          sort: (a, b) => parseInt(a, 10) - parseInt(b, 10),
         },
         {
+          name: 'fullBath',
           label: 'Baths',
           field: (tableData) => tableData.fullBath,
           sortable: true,
-          sort: (a, b) => parseInt(a, 10) - parseInt(b, 10),
         },
         {
           label: 'Auditor Link',
@@ -157,7 +163,7 @@ export default {
       this.filteredFeatures = this.$store.state.features.filter((property) => {
         console.log('date', toDate);
         return (
-          property.totalRooms === filterOptions.numOfBeds &&
+          property.bedrooms === filterOptions.numOfBeds &&
           property.fullBath === filterOptions.numOfBathrooms &&
           property.lastSaleAmount >= filterOptions.lastPriceRange.min &&
           property.lastSaleAmount <= filterOptions.lastPriceRange.max &&

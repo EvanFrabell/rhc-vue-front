@@ -16,6 +16,7 @@
       <span>${{ max }} </span>
     </div>
   </div>
+  <h4 class="tooltip">Numbers based on square mile radius</h4>
 </template>
 
 <script src="./summary.js"></script>

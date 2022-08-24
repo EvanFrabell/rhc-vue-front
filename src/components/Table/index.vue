@@ -26,12 +26,12 @@
       title="Results"
       :rows="tableData"
       :columns="columns"
-      :rows-per-page-options="[11]"
+      :rows-per-page-options="[10]"
       :row-key="name"
-      binary-state-sort
+      :pagination="pagination"
+      @update:pagination="pagination = $event"
       flat
       bordered
-      ref="grid"
     />
     <div class="result-table_btns">
       <div class="table_btns_search">
@@ -43,14 +43,14 @@
           @click="$emit('openSearch')"
         />
       </div>
-      <div class="result-table_btns_excel-export">
+      <!-- <div class="result-table_btns_excel-export">
         <q-btn
           flattened
           color="primary"
           label="Export to Excel"
           @click="exportAsExcel"
         />
-      </div>
+      </div> -->
     </div>
     <!-- <table ref="exportable_table" class="" id="sortTable">
       <thead>
