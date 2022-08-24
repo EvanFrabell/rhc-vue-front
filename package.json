@@ -9,8 +9,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "web: npm run wstart",
-    "production": "vue-cli-service serve --mode production"
+    "start": "webpack-dev-server --mode development --hot --open --port $PORT",
+    "build": "npm i -dev && webpack --mode production",
+    "heroku-postbuild": "npm build"
   },
   "dependencies": {
     "@elfalem/leaflet-curve": "^0.9.1",
