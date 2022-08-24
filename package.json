@@ -6,8 +6,10 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot --open --port $PORT",
-    "build": "npm i -dev && webpack --mode production"
+    "dev": "vite",
+    "build": "vue vite build",
+    "serve": "vite preview",
+    "start": "vite --port $PORT"
   },
   "dependencies": {
     "@elfalem/leaflet-curve": "^0.9.1",
