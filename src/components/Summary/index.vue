@@ -19,5 +19,5 @@
   <h4 class="tooltip">Numbers based on square mile radius</h4>
 </template>
 
-<!-- <script src="./summary.js"></script> -->
-<!-- <style src="./summary.scss" lang="scss"></style> -->
+<script src="./summary.js"></script>
+<style src="./summary.scss" lang="scss"></style>
