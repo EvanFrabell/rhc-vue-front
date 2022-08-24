@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Autocomplete from '../Autocomplete/index.vue';
+import Autocomplete from '@/components/Autocomplete/index.vue';
 // import * as VueLeaflet from 'vue-leaflet';
 // import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster';
 import '../../assets/leaflet.css';
