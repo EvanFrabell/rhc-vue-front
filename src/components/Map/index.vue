@@ -38,5 +38,5 @@
   </div>
 </template>
 
-<script src="@components/Map/map.js"></script>
+<script src="@/components/Map/map.js"></script>
 <style src="./map.scss" lang="scss"></style>

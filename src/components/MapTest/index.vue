@@ -4,5 +4,5 @@
   </div>
 </template>
 
-<script src="./maptest.js"></script>
+<script src="@/components/MapTest/maptest.js"></script>
 <style src="./maptest.scss" lang="scss"></style>
