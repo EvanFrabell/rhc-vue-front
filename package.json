@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node server.js"
   },
   "dependencies": {
     "@elfalem/leaflet-curve": "^0.9.1",
@@ -17,10 +18,12 @@
     "autoprefix": "^1.0.1",
     "axios": "^0.27.2",
     "core-js": "^3.23.4",
+    "express": "^4.18.1",
     "firebase": "^9.8.4",
     "leaflet": "^1.8.0",
     "lodash": "^4.17.21",
     "quasar": "^2.7.4",
+    "serve-static": "^1.15.0",
     "vue": "^3.2.25",
     "vue-router": "^4.0.16",
     "vuex": "^4.0.2",
