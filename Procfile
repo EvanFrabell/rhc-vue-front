@@ -1,1 +1,1 @@
-npm run wstart
+web: npm run wstart
