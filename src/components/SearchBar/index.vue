@@ -71,5 +71,5 @@
     />
   </div>
 </template>
-<script src="@/components/Searchbar/searchbar.js"></script>
+<script src="./searchbar.js"></script>
 <style src="./searchbar.scss" lang="scss"></style>
