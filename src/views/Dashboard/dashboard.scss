@@ -1,0 +1,17 @@
+.dashboard {
+  margin: 4rem;
+  .search-popup {
+    width: 80%;
+    min-width: 80%;
+  }
+  .dashboard-map {
+    margin-top: 2rem;
+    display: block;
+    width: 100%;
+  }
+  .table-row {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+}
