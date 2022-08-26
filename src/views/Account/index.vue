@@ -1,44 +1,11 @@
 <template>
-  <div class="row">
-    <div class="col">
-      
-      <h2>Subscription Plans</h2>
-      
-      <hr />
+    <default-layout>
+        <h1>Account</h1>
 
-      <div v-for="(product, index) in products" 
-            :key="index + '-product'">
-        <h3>{{ product.name }}</h3>
-
-        <div
-          v-for="(price, priceIndex) in product.prices"
-          :key="priceIndex + '-price'">
-          <div class="form-check">
-
-            <input
-              type="radio"
-              class="form-check-input"
-              v-model="selectedPrice"
-              :value="price.id"
-              :id="price.id" />
-            
-            <label :for="price.id" class="form-check-label">
-              {{ price.interval }}
-            </label>
-
-          </div>
-        </div>
-      </div>
-
-      <button
-        class="btn btn-primary"
-        @click="createSub"
-        :disabled="!selectedPrice || isLoading"
-      >
-        {{ isLoading ? "Loading..." : "Create subscription" }}
-      </button>
-    </div>
-  </div>
+        <div v-if="isLoading">Loading account information...</div>
+        <PriceSelection v-else-if="!subscription" />
+        <SubscribedAccount v-else :subscription="subscription"/>
+    </default-layout>
 </template>
 
 <script src="./account.js"></script>
