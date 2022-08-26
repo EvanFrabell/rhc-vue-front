@@ -42,9 +42,9 @@
             />
 
             <div class="social-logins">
-              <a href="#!"><i class="fab fa-facebook-f fa-lg"></i></a>
-              <a href="#!"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-              <a href="#!"><i class="fab fa-google fa-lg"></i></a>
+              <!-- <a href="#!"><i class="fab fa-facebook-f fa-lg"></i></a>
+              <a href="#!"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a> -->
+              <a href="#!" @click="signIn"><i class="fab fa-google fa-lg"></i></a>
             </div>
           </form>
 

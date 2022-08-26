@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { getAuth } from 'firebase/auth';
 
 const Login = () => {
   return import(/* webpackChunkName: "users" */ '../views/Login/index.vue');
@@ -8,6 +9,9 @@ const Register = () => {
 };
 const Home = () => {
   return import(/* webpackChunkName: "users" */ '../views/Home/index.vue');
+};
+const Account = () => {
+  return import(/* webpackChunkName: "users" */ '../views/Account/index.vue');
 };
 const Contact = () => {
   return import(/* webpackChunkName: "users" */ '../views/Contact/index.vue');
@@ -36,6 +40,13 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: DashBoard,
+    // Requires subscription and account
+    meta: { requiresAuth: true },
+  },
+  {
+    path: '/account',
+    name: 'Account',
+    component: Account,
     meta: { requiresAuth: true },
   },
   {
@@ -52,6 +63,9 @@ const router = new createRouter({
   routes,
 });
 
+
+
+
 // router.beforeEach((to, from, next) => {
 //   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 //   const isAuthenticated = getAuth().currentUser;
@@ -62,6 +76,7 @@ const router = new createRouter({
 //   } else {
 //     next();
 //   }
+
 
 // const auth = getAuth();
 // onAuthStateChanged(auth, (user) => {

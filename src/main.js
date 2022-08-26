@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import { Quasar } from 'quasar';
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from "firebase/app"
 
 import router from './router';
 import store from './store';
@@ -29,6 +29,7 @@ const firebaseApp = initializeApp({
 });
 
 const myApp = createApp(App).use(router).use(store).use(firebaseApp);
+// const myApp = createApp(App).use(router).use(store);
 myApp.use(Quasar, {
   plugins: {
     Notify,
