@@ -23,7 +23,7 @@ export default {
 
         console.log(newUser);
 
-        router.replace({ name: 'Dashbaord' });
+        router.replace({ name: 'Dashboard' });
       } catch (error) {
         console.log(error.message);
       }
