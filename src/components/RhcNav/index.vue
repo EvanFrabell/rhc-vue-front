@@ -10,6 +10,9 @@
         <router-link to="/dashboard" class="">Map</router-link>
       </li>
       <li>
+        <router-link to="/account" class="">Account</router-link>
+      </li>
+      <li>
         <router-link to="/contact" class="">Contact</router-link>
       </li>
       <li v-if="!loggedIn">
