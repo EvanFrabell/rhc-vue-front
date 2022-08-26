@@ -1,6 +1,5 @@
 import axios from 'axios';
 import _ from 'lodash';
-import Autocomplete from '../AutoComplete/index.vue';
 import { mapActions, mapGetters, mapMutations } from 'vuex';
 import MapTest from '../MapTest/index.vue';
 import Map from '../Map/index.vue';
@@ -25,7 +24,6 @@ export default {
     };
   },
   components: {
-    Autocomplete,
     Map,
     MapTest,
   },

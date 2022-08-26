@@ -1,8 +1,8 @@
-import SearchBar from '../../components/SearchBar/index.vue';
-import Summary from '../../components/Summary/index.vue';
-import Table from '../../components/Table/index.vue';
-import TableFilters from '../../components/TableFilters/index.vue';
-import MapTest from '../../components/MapTest/index.vue';
+import SearchBar from '@/components/SearchBar/index.vue';
+import Summary from '@/components/Summary/index.vue';
+import Table from '@/components/Table/index.vue';
+import TableFilters from '@/components/TableFilters/index.vue';
+import MapTest from '@/components/MapTest/index.vue';
 
 export default {
   name: 'dashboard',
