@@ -20,7 +20,7 @@ export default {
       passwordCopy: '',
       error: '',
       products: [],
-      selectedPrice: 'price_1LaiwzGrTucbD8SBfFIUUBPv',
+      selectedPrice: 'price_1Lat4VGrTucbD8SBxtUFHJR3',
       isLoading: false,
     };
   },

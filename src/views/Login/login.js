@@ -29,6 +29,7 @@ export default {
             
       } catch (error) {
         console.log(error.message);
+        alert("There was an issue logging into your account.  Please email support team.")
       }
       
     },
@@ -44,7 +45,12 @@ export default {
 
         this.fetchSubscription();
       } catch (error) {
-        console.log(error.message);
+
+        if(error.message=="Firebase: Error (auth/user-not-found).") {
+          alert("Email has not been registered.")
+        } else if (error.message=="Firebase: Error (auth/wrong-password).") {
+          alert("Incorrect username or password.")
+        };
       }
     },
     async fetchSubscription() {
@@ -70,11 +76,11 @@ export default {
 
       if (this.subscription == null) {
         console.log("You are NOT subscribed!!!");
-        getAuth().signOut();
-        this.$router.replace({ name: 'Register' });
+        alert("Your subscription has expired or has not started.  Redirecting to your Account page.");
+        //getAuth().signOut();
+        this.$router.replace({ name: 'Account' });
       } else {
         console.log("You are subscribed!!!");
-        router.replace({ name: 'Dashboard' });
         this.$router.replace({ name: 'Dashboard' });
       };
     },
