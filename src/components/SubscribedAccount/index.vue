@@ -1,40 +1,24 @@
 <template>
-  <div class="row">
-    <div class="col">
-      <h2>Subscribed Account</h2>
-      
-      <div class="alert alert-warning" v-if="subscription.cancel_at_period_end">
-        This subscription will cancel at the end of the period.
+  <div class="space-box">
+    <div class="child-box">
+      <div class="info-container">
+        <div class="alert alert-warning" style="color:red" v-if="subscription.cancel_at_period_end">
+          This subscription will cancel at the end of the period!
+        </div>
+
+        <ul id="fresh">
+          <li><b>Status:</b> Active</li>
+          <li><b>Subscription:</b> RHC $5/Monthly</li>
+          <li><b>Current Period Start:</b> {{new Date(subscription.current_period_start.seconds * 1000 ).toLocaleString()}}</li>
+          <li><b>Current Period End:</b> {{new Date(subscription.current_period_end.seconds * 1000 ).toLocaleString()}}</li>
+        </ul>
       </div>
-      <p>
-      </p>
-      <p>
-        Current period start:
-        {{
-          new Date(
-            subscription.current_period_start.seconds * 1000
-          ).toLocaleString()
-        }}
-      </p>
-
-      <p>
-        Current period end:
-        {{
-          new Date(
-            subscription.current_period_end.seconds * 1000
-          ).toLocaleString()
-        }}
-      </p>
-
-      <button class="btn btn-primary" 
+    </div>
+    <div>
+      <button class="button-24"
               :disabled="isLoading"
               @click="openCustomerPortal">
-        {{ isLoading ? "Loading..." : "Open my billing portal" }}
-      </button>
-      <button class="btn btn-primary" 
-              :disabled="isLoading"
-              @click="openCustomerPortal">
-        Cancel My Subscription
+        {{ isLoading ? "Loading..." : "Open Billing Portal" }}
       </button>
     </div>
   </div>

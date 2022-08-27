@@ -1,8 +1,8 @@
 import {
   getFirestore,
-  getDocs,
-  where,
-  query,
+  // getDocs,
+  // where,
+  // query,
   collection,
   addDoc,
   onSnapshot,
@@ -11,35 +11,35 @@ import { getAuth } from 'firebase/auth';
 export default {
   data() {
     return {
-      products: [],
-      selectedPrice: null,
+      // products: [],
+      selectedPrice: 'price_1Lat4VGrTucbD8SBxtUFHJR3',
       isLoading: false,
     };
   },
-  mounted() {
-    this.fetchProducts();
-  },
+  // mounted() {
+  //   this.fetchProducts();
+  // },
   methods: {
-    async fetchProducts() {
-      const db = getFirestore();
-      const productsRef = collection(db, "products");
-      const productsQuery = query(productsRef, where("active", "==", true));
-      const productsQuerySnap = await getDocs(productsQuery);
-      productsQuerySnap.forEach(async (doc) => {
-        const pricesRef = collection(db, "products", doc.id, "prices");
-        const pricesQuerySnap = await getDocs(pricesRef);
-        this.products.push({
-          id: doc.id,
-          ...doc.data(),
-          prices: pricesQuerySnap.docs.map((price) => {
-            return {
-              id: price.id,
-              ...price.data(),
-            };
-          }),
-        });
-      });
-    },
+    // async fetchProducts() {
+    //   const db = getFirestore();
+    //   const productsRef = collection(db, "products");
+    //   const productsQuery = query(productsRef, where("active", "==", true));
+    //   const productsQuerySnap = await getDocs(productsQuery);
+    //   productsQuerySnap.forEach(async (doc) => {
+    //     const pricesRef = collection(db, "products", doc.id, "prices");
+    //     const pricesQuerySnap = await getDocs(pricesRef);
+    //     this.products.push({
+    //       id: doc.id,
+    //       ...doc.data(),
+    //       prices: pricesQuerySnap.docs.map((price) => {
+    //         return {
+    //           id: price.id,
+    //           ...price.data(),
+    //         };
+    //       }),
+    //     });
+    //   });
+    // },
     async createSub() {
       this.isLoading = true;
       const db = getFirestore();

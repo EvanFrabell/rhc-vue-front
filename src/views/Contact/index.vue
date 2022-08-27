@@ -1,45 +1,21 @@
 <template>
-  <div class="contact">
-    <div class="container">
-      <div class="content-section">
-        <div class="title">
-          <a
-            id="linkeda"
-            href="https://www.linkedin.com/in/aaron365/"
-            target="_blank"
-            ><img
-              src="../../assets/linkedin.png"
-              alt="Follow Us"
-              style="width: 600px; height: 150px"
-          /></a>
-          <a
-            id="linkeda"
-            href="https://www.linkedin.com/in/evanfrabell/"
-            target="_blank"
-            ><img
-              src="../../assets/linkedin.png"
-              alt="Follow Us"
-              style="width: 600px; height: 150px"
-          /></a>
-          <a
-            id="linkeda"
-            href="https://www.linkedin.com/in/jeremy-siegle-59337850/"
-            target="_blank"
-            ><img
-              src="../../assets/linkedin.png"
-              alt="Follow Us"
-              style="width: 600px; height: 150px"
-          /></a>
-        </div>
-        <div class="content">
-          <p style="font-weight: bold">
-            Real Home Compare® is currently patent pending.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+    <body class="contact">
+        <section class="contactsection">
+            <div class = "image">
+               <img src="https://cdn.pixabay.com/photo/2017/08/26/23/37/business-2684758__340.png">
+            </div>
+
+            <div class = "content">
+                <h2>Contact Us</h2>
+                <span><!-- line here --></span>
+                <p>If you're having any technical or subscription issues please email customer support at Admin@RealHomeCompare.com</p>
+      
+            </div>
+        </section><br><br>
+    </body>
+
 </template>
 
 <script src="./contact.js"></script>
 <style src="./contact.scss" lang="scss"></style>
+
