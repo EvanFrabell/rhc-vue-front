@@ -1,13 +1,13 @@
 import axios from 'axios';
 // import * as VueLeaflet from 'vue-leaflet';
 // import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster';
-import '../../assets/leaflet.css';
+import '@/assets/leaflet.css';
 import L from 'leaflet';
-import '../../assets/Tween.js';
-import '../../assets/leaflet.curve.js';
+import '@/assets/Tween.js';
+import '@/assets/leaflet.curve.js';
 import { createNamespacedHelpers } from 'vuex';
 import { canvas, icon, Icon } from 'leaflet';
-import blueIconUrl from '../../../src/assets/marker-icon.png';
+import blueIconUrl from '@/assets/marker-icon.png';
 import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
 import _filter from 'lodash/filter';
 import { MapActions } from '../../store/map/actions';
@@ -54,8 +54,7 @@ export default {
       },
     };
   },
-  components: {
-  },
+  components: {},
   mounted() {
     axios
       .get('https://rhc-backend.herokuapp.com/rhc/api/properties/address')
