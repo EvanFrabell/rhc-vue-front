@@ -11,6 +11,7 @@ export default {
   data() {
     return {
       autoAddressOptions: [],
+      addressOptions: [],
       coordList: [],
       excelData: [],
       features: [],
@@ -49,7 +50,7 @@ export default {
       });
 
     // grab all the address's and put them into autoCompleteAddresses for auto-complete feature
-    this.autoAddressOptions = autoCompleteAddresses.features.map(
+    this.addressOptions = autoCompleteAddresses.features.map(
       (f) => f.properties.address
     );
   },
@@ -65,12 +66,16 @@ export default {
     async searchAddress() {
       this.rhcValue = 0;
       this.getUrlAndSetFeatures();
+      this.setSearchText('');
+      this.autoAddressOptions = addressOptions.features.map(
+        (f) => f.properties.address
+      );
       this.closeDialog();
     },
     filterFn(val, update, abort) {
       update(() => {
         const needle = val.toLocaleLowerCase();
-        this.autoAddressOptions = this.autoAddressOptions.filter(
+        this.autoAddressOptions = this.addressOptions.filter(
           (v) => v.toLocaleLowerCase().indexOf(needle) > -1
         );
       });
