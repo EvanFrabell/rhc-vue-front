@@ -1,6 +1,6 @@
 <template>
     <default-layout>
-        <h1>Account</h1>
+        <h2 v-if="subscription">Account Details</h2>
 
         <div v-if="isLoading">Loading account information...</div>
         <PriceSelection v-else-if="!subscription" />
