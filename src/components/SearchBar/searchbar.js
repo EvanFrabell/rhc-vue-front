@@ -4,12 +4,13 @@ import { mapActions, mapGetters, mapMutations } from 'vuex';
 import MapTest from '../MapTest/index.vue';
 import Map from '../Map/index.vue';
 import { BASE_COORDS } from '../../constants/map-constants';
+import autoCompleteAddresses from './smallset.json';
 
 export default {
   name: 'search-bar',
   data() {
     return {
-      autoAddress: [],
+      autoAddressOptions: [],
       coordList: [],
       excelData: [],
       features: [],
@@ -46,6 +47,11 @@ export default {
       .catch(() => {
         console.log('----ERROR----');
       });
+
+    // grab all the address's and put them into autoCompleteAddresses for auto-complete feature
+    this.autoAddressOptions = autoCompleteAddresses.features.map(
+      (f) => f.properties.address
+    );
   },
   methods: {
     ...mapActions([
@@ -60,6 +66,17 @@ export default {
       this.rhcValue = 0;
       this.getUrlAndSetFeatures();
       this.closeDialog();
+    },
+    filterFn(val, update, abort) {
+      update(() => {
+        const needle = val.toLocaleLowerCase();
+        this.autoAddressOptions = this.autoAddressOptions.filter(
+          (v) => v.toLocaleLowerCase().indexOf(needle) > -1
+        );
+      });
+    },
+    setSearchText(val) {
+      this.searchText = val;
     },
     async updateMap() {
       this.hasReset = false;

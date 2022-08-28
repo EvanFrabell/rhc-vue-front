@@ -13,19 +13,29 @@
       </div>
       <div class="inputs">
         <div v-if="selectedOption === 'Address'">
-          <q-input
-            square
-            outlined
-            v-model="searchText"
-            @keypress.enter="searchAddress"
-          >
-            <!-- <q-autocomplete
-              @search="autoAddress"
-              :min-characters="3"
-              @selected="addressSelected"
-              @keypress.enter="addressSelected"
-            /> -->
-          </q-input>
+          <div style="margin-top: 2rem">
+            <q-select
+              filled
+              :model-value="searchText"
+              use-input
+              hide-selected
+              fill-input
+              input-debounce="0"
+              :options="autoAddressOptions"
+              @filter="filterFn"
+              @input-value="setSearchText"
+              @keypress.enter="searchAddress"
+              style="width: 250px; padding-bottom: 32px"
+            >
+              <template v-slot:no-option>
+                <q-item>
+                  <q-item-section class="text-grey">
+                    No results
+                  </q-item-section>
+                </q-item>
+              </template>
+            </q-select>
+          </div>
         </div>
         <div v-else-if="selectedOption === 'Zip Code'">
           <q-input
