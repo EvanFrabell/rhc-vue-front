@@ -2,6 +2,7 @@ import axios from 'axios';
 import _, { partition } from 'lodash';
 import _filter from 'lodash/filter';
 import TableFilters from '../TableFilters/index.vue';
+import { write, writeFile, utils } from 'xlsx';
 
 export default {
   name: 'table',
@@ -58,7 +59,7 @@ export default {
           field: 'appraisalDate',
           sortable: true,
         },
-        { label: 'Zip Code', field: 'zipCode' },
+        { name: 'Zip Code', label: 'Zip Code', field: 'zipCode' },
         {
           name: 'bedrooms',
           label: 'BedRooms',
@@ -72,6 +73,7 @@ export default {
           sortable: true,
         },
         {
+          name: 'Auditor Link',
           label: 'Auditor Link',
           field: 'parcelId',
           dataFormat: this.parcelLink,
@@ -130,7 +132,6 @@ export default {
 
       return data;
     },
-    exportAsExcel() {},
     highLighter(address) {
       if (this.searchText == address) {
         return 'featured-row';
@@ -174,6 +175,16 @@ export default {
           // new Date(property.lastSaleDate) <= toDate
         );
       });
+    },
+    exportExcel(type, fn, dl) {
+      var elt = this.$refs.exportable_table;
+      var wb = utils.table_to_book(elt, { sheet: 'Home Compare' });
+      return dl
+        ? write(wb, { bookType: type, bookSST: true, type: 'base64' })
+        : writeFile(
+            wb,
+            fn || ('RHC HomeCompare' + '.' || 'HomeCompare.') + (type || 'xlsx')
+          );
     },
     _filter,
   },
