@@ -41,6 +41,13 @@ export default {
       this.subscription = await getDocs(subsQuery)
         .then((sub) => 
             sub.docs.length > 0 ? sub.docs[0].data() : null);
+
+      if (this.subscription == null) {
+        console.log("You are NOT subscribed!!!");
+      } else {
+        console.log("You are subscribed!!!");
+        this.$store.commit("SET_ISSUBSCRIBED", true);
+      };
       this.isLoading = false;
     },
   },

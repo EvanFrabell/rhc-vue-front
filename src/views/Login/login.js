@@ -81,6 +81,7 @@ export default {
         this.$router.replace({ name: 'Account' });
       } else {
         console.log("You are subscribed!!!");
+        this.$store.commit("SET_ISSUBSCRIBED", true);
         this.$router.replace({ name: 'Dashboard' });
       };
     },

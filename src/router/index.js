@@ -19,6 +19,9 @@ const Contact = () => {
 const DashBoard = () => {
   return import(/* webpackChunkName: "users" */ '../views/Dashboard/index.vue');
 };
+const ForgotPassword = () => {
+  return import(/* webpackChunkName: "users" */ '../views/ForgotPassword/index.vue');
+};
 
 const routes = [
   {
@@ -53,6 +56,11 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: Contact,
+  },
+  {
+    path: '/forgotpassword',
+    name: 'ForgotPassword',
+    component: ForgotPassword,
   },
 ];
 

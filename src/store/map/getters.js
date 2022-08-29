@@ -15,4 +15,5 @@ export const getters = {
   },
   getFeatures: (state) => state.features,
   getFilters: (state) => state.filters,
+  getisSubscribed: (state) => state.isSubscribed,
 };

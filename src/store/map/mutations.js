@@ -8,6 +8,7 @@ export class MapMutations {
   static SET_SELECTED_FEATURE = new Sealed('SET_SELECTED_FEATURE').value;
   static SET_GEO_DATA = new Sealed('SET_GEO_DATA').value;
   static SET_FILTERS = new Sealed('SET_FILTERS').value;
+  static SET_ISSUBSCRIBED = new Sealed('SET_ISSUBSCRIBED').value;
 }
 
 export const mutations = {
@@ -35,4 +36,7 @@ export const mutations = {
   [MapMutations.SET_FILTERS](state, payload) {
     state.filters = payload;
   },
+  [MapMutations.SET_ISSUBSCRIBED](state, payload) {
+    state.isSubscribed = payload;
+  }
 };

@@ -30,7 +30,7 @@
             </div>
 
             <p class="forgot-password">
-              <a href="#!">Forgot password?</a>
+              <a href="#!" @click="this.$router.replace({ name: 'ForgotPassword' })">Forgot password?</a>
             </p>
 
             <q-btn
@@ -55,7 +55,7 @@
       <q-card-section>
         <p class="">
           Don't have an account?
-          <a href="#!" class="signup">Sign Up</a>
+          <a href="#!" @click="this.$router.replace({ name: 'Register' })" class="signup">Sign Up</a>
         </p>
       </q-card-section>
     </q-card>

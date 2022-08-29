@@ -6,10 +6,10 @@
       </router-link>
     </div>
     <ul class="nav_options">
-      <li v-if="loggedIn">
+      <li v-if="loggedIn && isSubscribed">
         <router-link to="/dashboard" class="">Map</router-link>
       </li>
-      <li>
+      <li v-if="loggedIn">
         <router-link to="/account" class="">Account</router-link>
       </li>
       <li>

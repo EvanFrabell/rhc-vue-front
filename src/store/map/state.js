@@ -24,4 +24,5 @@ export const state = () => ({
   selectedFeature: {},
   lastUpdate: {},
   geoData: [],
+  isSubscribed: false,
 });

@@ -9,7 +9,7 @@ import {
 } from 'firebase/firestore';
 import {
   getAuth,
-  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
 } from 'firebase/auth';
@@ -30,20 +30,28 @@ export default {
     };
   },
   methods: {
+
     async emailRegister() {
-      try {
-        const auth = getAuth();
-        const user = await signInWithEmailAndPassword(
-          auth,
-          this.email,
-          this.password
-        );
-        console.log({ user });
-        this.fetchSubscription();
-        this.createSub();
-      } catch (error) {
-        console.log(error.message);
-      }
+      if (this.password !== this.passwordCopy) {
+        alert("Passwords do not match.")
+      } else{
+        try {
+          const auth = getAuth();
+          const user = await createUserWithEmailAndPassword(
+              auth,
+              this.email,
+              this.password
+            );
+          await this.fetchSubscription();
+        } catch (error) {
+          console.log(error.message);
+          if(error.message == "Firebase: Error (auth/email-already-in-use).") {
+            alert("Email is already in use.");
+          } else if(error.message == "Firebase: Password should be at least 6 characters (auth/weak-password)."){
+            alert("Password must be at least 6 characters in length.");
+          };
+        };
+      }; 
     },
 
     async googleRegister() {
@@ -51,10 +59,7 @@ export default {
         const auth = getAuth();
         const provider = new GoogleAuthProvider();
         const gUser = await signInWithPopup(auth, provider);
-        console.log(gUser);
-
-        this.fetchSubscription();
-        this.createSub();
+        await this.fetchSubscription();
       } catch (error) {
         console.log(error.message);
       }
@@ -62,9 +67,7 @@ export default {
 
     async fetchSubscription() {
       this.isLoading = true;
-
       const db = getFirestore();
-
       const subsRef = collection(
         db,
         'customers',
@@ -81,36 +84,17 @@ export default {
         sub.docs.length > 0 ? sub.docs[0].data() : null
       );
 
-      //this.isLoading = false;
-
       if (this.subscription == null) {
         console.log('You are NOT subscribed!!!');
-        this.fetchProducts();
+        this.createSub();
       } else {
         console.log('You are already subscribed!!!');
+        this.$store.commit("SET_ISSUBSCRIBED", true);
+        this.isLoading = false;
+        this.$router.replace({name:"Account"})
       }
     },
 
-    async fetchProducts() {
-      const db = getFirestore();
-      const productsRef = collection(db, 'products');
-      const productsQuery = query(productsRef, where('active', '==', true));
-      const productsQuerySnap = await getDocs(productsQuery);
-      productsQuerySnap.forEach(async (doc) => {
-        const pricesRef = collection(db, 'products', doc.id, 'prices');
-        const pricesQuerySnap = await getDocs(pricesRef);
-        this.products.push({
-          id: doc.id,
-          ...doc.data(),
-          prices: pricesQuerySnap.docs.map((price) => {
-            return {
-              id: price.id,
-              ...price.data(),
-            };
-          }),
-        });
-      });
-    },
     async createSub() {
       const db = getFirestore();
       const collectionRef = collection(

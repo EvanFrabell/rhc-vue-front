@@ -8,7 +8,7 @@
             <div class = "content">
                 <h2>Contact Us</h2>
                 <span><!-- line here --></span>
-                <p>If you're having any technical or subscription issues please email customer support at Efrabell@RealHomeCompare.com</p>
+                <p>If you're having any technical or subscription issues please email customer support at EpFrabell@gmail.com</p>
       
             </div>
         </section><br><br>
