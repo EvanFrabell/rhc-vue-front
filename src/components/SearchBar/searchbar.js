@@ -67,7 +67,7 @@ export default {
       this.rhcValue = 0;
       this.getUrlAndSetFeatures();
       this.setSearchText('');
-      this.autoAddressOptions = addressOptions.features.map(
+      this.addressOptions = autoCompleteAddresses.features.map(
         (f) => f.properties.address
       );
       this.closeDialog();

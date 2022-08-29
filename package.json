@@ -29,7 +29,7 @@
     "vue": "^3.2.25",
     "vue-router": "^4.0.16",
     "vuex": "^4.0.2",
-    "xlsx": "file:sheetjs/xlsx-0.18.9.tgz"
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.18.10/xlsx-0.18.10.tgz"
   },
   "devDependencies": {
     "@quasar/vite-plugin": "^1.0.10",

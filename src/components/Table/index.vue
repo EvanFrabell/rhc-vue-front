@@ -40,159 +40,67 @@
           color="primary"
           :size="md"
           label="Search"
+          class="mr-lg"
           @click="$emit('openSearch')"
         />
       </div>
-      <!-- <div class="result-table_btns_excel-export">
+
+      <div class="result-table_btns_excel-export">
         <q-btn
           flattened
           color="primary"
           label="Export to Excel"
-          @click="exportAsExcel"
+          @click="exportExcel('xlsx')"
         />
-      </div> -->
+      </div>
     </div>
-    <!-- <table ref="exportable_table" class="" id="sortTable">
+
+    <table
+      ref="exportable_table"
+      id="excelTable"
+      style="display: none"
+      border="1"
+      cellpadding="1"
+    >
       <thead>
-        <tr id="tr-head">
-          <th class="align-middle" style="cursor: pointer" id="nameClick">
-            <b-button class="" @click="sortTable(0)">Address</b-button>
-          </th>
-          <th class="align-middle">
-            <b-button class="" @click="sortTable(1)">Finished sqft</b-button>
-          </th>
-          <th class="align-middle">
-            <b-button
-              class=""
-              @click="sortTable(2)"
-              v-b-popover.hover.top="'Real Home Compare Price per Sq.Ft.'"
-              title="Real Home Compare PsF"
-              >RHC-PsF</b-button
-            >
-          </th>
-          <th class="align-middle">
-            <b-button
-              class="btn btn-dark font-weight-bold"
-              @click="sortTable(3)"
-              v-b-popover.hover.top="'Last Sale Price per Sq.Ft.'"
-              title="Last Sale PsF"
-              >LS-PsF</b-button
-            >
-          </th>
-          <th class="align-middle">
-            <b-button
-              class="btn btn-dark font-weight-bold"
-              @click="sortTable(4)"
-              >Last Sale Amount</b-button
-            >
-          </th>
-          <th class="align-middle">
-            <b-button
-              class="btn btn-dark font-weight-bold"
-              @click="sortTable(5)"
-              >Last Sale Date</b-button
-            >
-          </th>
-          <th class="align-middle">
-            <b-button
-              class="btn btn-dark font-weight-bold"
-              @click="sortTable(6)"
-              v-b-popover.hover.top="'Appraisal Price per Sq.Ft.'"
-              title="Appraisal PsF"
-              >A-PsF</b-button
-            >
-          </th>
-          <th class="align-middle">
-            <b-button
-              class="btn btn-dark font-weight-bold"
-              @click="sortTable(7)"
-              >Appraisal Sale Amount</b-button
-            >
-          </th>
-          <th class="align-middle">
-            <b-button
-              class="btn btn-dark font-weight-bold"
-              @click="sortTable(8)"
-              >Last Appraisal Date</b-button
-            >
-          </th>
-          <th class="align-middle">
-            <b-button
-              class="btn btn-dark font-weight-bold"
-              @click="sortTable(9)"
-              >Zip Code</b-button
-            >
-          </th>
-          <th class="align-middle" style="display: none">
-            <b-button
-              class="btn btn-dark font-weight-bold"
-              @click="sortTable(10)"
-              >Year Built</b-button
-            >
-          </th>
-          <th class="align-middle">
-            <b-button
-              class="btn btn-dark font-weight-bold"
-              @click="sortTable(11)"
-              >Total Rooms</b-button
-            >
-          </th>
-          <th class="align-middle" style="display: none">Bedrooms</th>
-          <th class="align-middle">
-            <b-button
-              class="btn btn-dark font-weight-bold"
-              @click="sortTable(12)"
-              >Baths</b-button
-            >
-          </th>
-          <th class="align-middle">
-            <b-button
-              class="btn btn-dark font-weight-bold"
-              @click="sortTable(13)"
-              >Auditor Link</b-button
-            >
+        <tr>
+          <th v-for="(column, idx) in columns" :key="idx">
+            {{ column.name }}
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr
-          :class="highLighter(`${propy.address}`)"
-          id="tr-body"
-          v-for="propy in propyData"
-          :key="propy.id"
-        >
-          <td class="">{{ propy.address }}</td>
-          <td class="text-center">{{ propy.finishedSqFt }}</td>
-          <td class="text-center">{{ propy.rhcPsf }}</td>
-          <td class="text-center">{{ propy.lastSalePsf }}</td>
-          <td class="text-center">{{ propy.lastSaleAmount }}</td>
-          <td class="text-center">{{ propy.lastSaleDate }}</td>
-          <td class="text-center">{{ propy.appraisalPsf }}</td>
-          <td class="text-center">{{ propy.appraisalSale }}</td>
-          <td class="text-center">{{ propy.appraisalDate }}</td>
-          <td class="text-center">{{ propy.zipCode }}</td>
+        <tr id="tr-body" v-for="feature in filteredFeatures" :key="feature.id">
+          <td class="">{{ feature.address }}</td>
+          <td class="text-center">{{ feature.finishedSqFt }}</td>
+          <td class="text-center">{{ feature.rhcPsf }}</td>
+          <td class="text-center">{{ feature.lastSaleAmount }}</td>
+          <td class="text-center">{{ feature.lastSaleDate }}</td>
+          <td class="text-center">{{ feature.appraisalSale }}</td>
+          <td class="text-center">{{ feature.appraisalDate }}</td>
+          <td class="text-center">{{ feature.zipCode }}</td>
           <td class="text-center" style="display: none">
-            {{ propy.yearBuilt }}
+            {{ feature.yearBuilt }}
           </td>
-          <td class="text-center">{{ propy.totalRooms }}</td>
+          <td class="text-center">{{ feature.totalRooms }}</td>
           <td class="text-center" style="display: none">
-            {{ propy.bedrooms }}
+            {{ feature.bedrooms }}
           </td>
-          <td class="text-center">{{ propy.fullBath }}</td>
+          <td class="text-center">{{ feature.fullBath }}</td>
           <td class="text-center">
             <a
               v-bind:href="
                 'https://wedge.hcauditor.org/view/re/' +
-                propy.parcelId +
+                feature.parcelId +
                 '/2021/summary'
               "
               target="_blank"
-              >{{ propy.parcelId }}</a
+              >{{ feature.parcelId }}</a
             >
           </td>
         </tr>
       </tbody>
-    </table> -->
+    </table>
   </div>
 </template>
 
