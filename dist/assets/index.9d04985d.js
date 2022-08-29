@@ -1,0 +1,1 @@
+import{_ as t,c as s,o,d as e}from"./index.c72d262d.js";var a={name:"Home",components:{}};const _={class:"home"},n=e("div",{class:"home-title"},[e("h1",{id:"main-title"},"REAL HOME COMPARE"),e("h4",{id:"sub-title"},"Open Testing for Hamilton County")],-1),c=[n];function i(r,d,l,m,p,h){return o(),s("div",_,c)}var u=t(a,[["render",i]]);export{u as default};

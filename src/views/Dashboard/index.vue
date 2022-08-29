@@ -45,18 +45,23 @@
             @closeDialog="handleSearchRequest"
             @coordUpdate="updateMarkers($event)"
           />
-          <!-- <map /> -->
         </q-card-section>
       </q-card>
     </q-dialog>
 
     <div v-if="!dialog">
       <Summary />
-      <Table
-        propyData="tableData"
-        selectedSearchOptionType="searchType"
-        @openSearch="dialog = true"
-      />
+      <div class="tables">
+        <p class="showTable" @click="displayTable">
+          {{ showTable ? 'Hide Table' : 'Show Table' }}
+        </p>
+        <Table
+          v-if="showTable"
+          propyData="tableData"
+          selectedSearchOptionType="searchType"
+          @openSearch="dialog = true"
+        />
+      </div>
       <map-test class="dashboard-map" :latlong="coords" />
     </div>
   </div>

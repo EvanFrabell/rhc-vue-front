@@ -12,6 +12,7 @@ export default {
       dialog: true,
       maximizedToggle: false,
       searchType: null,
+      showTable: true,
       tableData: [],
     };
   },
@@ -23,6 +24,9 @@ export default {
     TableFilters,
   },
   methods: {
+    displayTable() {
+      this.showTable = !this.showTable;
+    },
     handleSearchRequest(data) {
       this.dialog = false;
       this.tableData = data.tableData;

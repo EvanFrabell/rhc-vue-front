@@ -21,6 +21,7 @@
         @clear:filters="clearFilters"
       />
     </q-dialog>
+
     <q-table
       class="my-sticky-header-table"
       title="Results"
