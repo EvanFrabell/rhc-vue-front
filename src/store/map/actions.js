@@ -39,12 +39,15 @@ export const actions = {
         .get(zipcodeUrl, { headers: { 'x-rhc-projection': 'MAP' } })
         .then((response) => {
           console.log('from geo_data_by_zipcode action', response.data);
-          commit(
-            MapMutations.SET_GEO_DATA,
-            response.data.features.map((f) => f.geometry)
-          );
-          resolve(response.data.features.map((f) => f.geometry));
-        });
+          if (response.data.features) {
+            commit(
+              MapMutations.SET_GEO_DATA,
+              response.data.features.map((f) => f.geometry)
+            );
+            resolve(response.data.features.map((f) => f.geometry));
+          }
+        })
+        .catch(() => reject());
     });
   },
   async [MapActions.GEO_DATA_BY_ADDRESS]({ commit, state }, url) {
@@ -69,12 +72,15 @@ export const actions = {
         .get(url, { headers: { 'x-rhc-projection': 'MAP' } })
         .then((response) => {
           console.log('from geo_data_by_city_state action', response.data);
-          commit(
-            MapMutations.SET_GEO_DATA,
-            response.data.features.map((f) => f.geometry)
-          );
-          resolve(response.data.features.map((f) => f.geometry));
-        });
+          if (response.data.features) {
+            commit(
+              MapMutations.SET_GEO_DATA,
+              response.data.features.map((f) => f.geometry)
+            );
+            resolve(response.data.features.map((f) => f.geometry));
+          }
+        })
+        .catch(() => reject());
     });
   },
   async [MapActions.FEATURES_BY_ZIPCODE]({ commit, state }, zipcodeUrl) {
@@ -84,11 +90,14 @@ export const actions = {
         .get(zipcodeUrl, { headers: { 'x-rhc-projection': 'TABLE' } })
         .then((response) => {
           console.log('from action', response.data);
-          commit(MapMutations.SET_FEATURES, {
-            features: response.data.features.map((f) => f.properties),
-          });
-          resolve(response.data.features.map((f) => f.properties));
-        });
+          if (response.data.features) {
+            commit(MapMutations.SET_FEATURES, {
+              features: response.data.features.map((f) => f.properties),
+            });
+            resolve(response.data.features.map((f) => f.properties));
+          } else return false;
+        })
+        .catch(() => reject());
     });
   },
   async [MapActions.FEATURES_BY_ADDRESS]({ commit }, addressUrl) {

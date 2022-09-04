@@ -117,9 +117,9 @@ export default {
       this.rhcValue = 0;
 
       let url = '';
-      if (this.selectedOption == 'Address') {
+      if (this.selectedOption == 'Address' && this.searchText) {
         url = `https://rhc-backend.herokuapp.com/rhc/api/properties/address-radius?address=${this.searchText}`;
-      } else if (this.selectedOption == 'Zip Code') {
+      } else if (this.selectedOption == 'Zip Code' && this.searchText) {
         url = `https://rhc-backend.herokuapp.com/rhc/api/properties/zipcode?zipcode=${this.searchText}`;
       } else {
         url = `https://rhc-backend.herokuapp.com/rhc/api/properties/city-state?city=Cincinnati&state=OH`;

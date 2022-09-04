@@ -5,6 +5,7 @@ import MapTest from '../MapTest/index.vue';
 import Map from '../Map/index.vue';
 import { BASE_COORDS } from '../../constants/map-constants';
 import autoCompleteAddresses from './smallset.json';
+import { useQuasar } from 'quasar';
 
 export default {
   name: 'search-bar',
@@ -23,11 +24,15 @@ export default {
       selectedFeature: [],
       selectedOption: 'Zip Code',
       url: '',
+      $q: null,
     };
   },
   components: {
     Map,
     MapTest,
+  },
+  created() {
+    this.$q = useQuasar();
   },
   mounted() {
     // make reusable used in map table and search
@@ -67,16 +72,20 @@ export default {
       this.rhcValue = 0;
       this.getUrlAndSetFeatures();
       this.setSearchText('');
-      this.addressOptions = autoCompleteAddresses.features.map(
-        (f) => f.properties.address
+      this.url = `https://rhc-backend.herokuapp.com/rhc/api/properties/address-radius?address=${this.searchText}`;
+      this.FEATURES_BY_ADDRESS(this.url);
+      this.addressOptions = this.$store.state.features.map(
+        (f) => f.properties?.address
       );
       this.closeDialog();
     },
     filterFn(val, update, abort) {
       update(() => {
         const needle = val.toLocaleLowerCase();
-        this.autoAddressOptions = this.addressOptions.filter(
-          (v) => v.toLocaleLowerCase().indexOf(needle) > -1
+        this.url = `https://rhc-backend.herokuapp.com/rhc/api/properties/address-radius?address=${this.searchText}`;
+        this.FEATURES_BY_ADDRESS(this.url);
+        this.autoAddressOptions = this.$store.state.features.filter((v) =>
+          v.toLocaleLowerCase().startsWith(val)
         );
       });
     },
@@ -93,14 +102,18 @@ export default {
       switch (this.selectedOption) {
         case 'Address':
           this.geoData = await this.GEO_DATA_BY_ADDRESS(this.url);
-          this.coordList = this.geoData
-            .map((data, idx) => ({
-              coords: data.coordinates,
-              id: idx,
-            }))
-            .slice(0, 100)
-            .reverse();
-          this.$emit('coordUpdate', this.coordList);
+          if (this.geoData.length > 0) {
+            this.coordList = this.geoData
+              .map((data, idx) => ({
+                coords: data.coordinates,
+                id: idx,
+              }))
+              .slice(0, 100)
+              .reverse();
+            this.$emit('coordUpdate', this.coordList);
+          } else {
+            this.showNotif('center');
+          }
           break;
         case 'City, State':
           this.geoData = await this.GEO_DATA_BY_CITY_STATE(this.url);
@@ -113,35 +126,50 @@ export default {
           break;
         case 'Zip Code':
           this.geoData = await this.GEO_DATA_BY_ZIPCODE(this.url);
-          this.coordList = this.geoData
-            .map((data, idx) => ({
-              coords: data.coordinates,
-              id: idx,
-            }))
-            .slice(0, 100)
-            .reverse();
-          this.coordList = this.coordList.splice(0, 250);
-          this.$emit('coordUpdate', this.coordList);
+          if (this.geoData.length > 0) {
+            this.coordList = this.geoData
+              .map((data, idx) => ({
+                coords: data.coordinates,
+                id: idx,
+              }))
+              .slice(0, 100)
+              .reverse();
+            this.coordList = this.coordList.splice(0, 250);
+            this.$emit('coordUpdate', this.coordList);
+          } else {
+            console.log('notify!');
+            this.showNotif();
+          }
           break;
         default:
           break;
       }
 
       // this.coordList = this.coordList.slice(0, 100);
-      console.log('coordlist is now ', this.coordList);
+    },
+    showNotif() {
+      this.$q.notify({
+        message: 'No Results For Search. Try another input',
+        color: 'red',
+        position: 'top',
+      });
     },
     getUrlAndSetFeatures() {
-      if (this.selectedOption == 'Address') {
-        this.url = `https://rhc-backend.herokuapp.com/rhc/api/properties/address-radius?address=${this.searchText}`;
-        this.FEATURES_BY_ADDRESS(this.url);
-      } else if (this.selectedOption == 'Zip Code') {
-        this.url = `https://rhc-backend.herokuapp.com/rhc/api/properties/zipcode?zipcode=${this.searchText}`;
-        this.FEATURES_BY_ZIPCODE(this.url);
+      if (this.searchText) {
+        if (this.selectedOption == 'Address') {
+          this.url = `https://rhc-backend.herokuapp.com/rhc/api/properties/address-radius?address=${this.searchText}`;
+          this.FEATURES_BY_ADDRESS(this.url);
+        } else if (this.selectedOption == 'Zip Code') {
+          this.url = `https://rhc-backend.herokuapp.com/rhc/api/properties/zipcode?zipcode=${this.searchText}`;
+          this.FEATURES_BY_ZIPCODE(this.url);
+        } else {
+          let city = this.searchText.split(',')[0].trim();
+          let state = this.searchText.split(',')[1].trim();
+          this.url = `https://rhc-backend.herokuapp.com/rhc/api/properties/city-state?city=${city}&state=${state}`;
+          this.FEATURES_BY_CITY_AND_STATE(this.url);
+        }
       } else {
-        let city = this.searchText.split(',')[0].trim();
-        let state = this.searchText.split(',')[1].trim();
-        this.url = `https://rhc-backend.herokuapp.com/rhc/api/properties/city-state?city=${city}&state=${state}`;
-        this.FEATURES_BY_CITY_AND_STATE(this.url);
+        this.showNotif();
       }
     },
     closeDialog() {

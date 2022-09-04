@@ -52,11 +52,10 @@
     <div v-if="!dialog">
       <Summary />
       <div class="tables">
-        <p class="showTable" @click="displayTable">
+        <!-- <p class="showTable" @click="displayTable">
           {{ showTable ? 'Hide Table' : 'Show Table' }}
-        </p>
+        </p> -->
         <Table
-          v-if="showTable"
           propyData="tableData"
           selectedSearchOptionType="searchType"
           @openSearch="dialog = true"

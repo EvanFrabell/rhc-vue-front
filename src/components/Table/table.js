@@ -76,7 +76,6 @@ export default {
           name: 'Auditor Link',
           label: 'Auditor Link',
           field: 'parcelId',
-          dataFormat: this.parcelLink,
         },
       ],
       excelData: [],

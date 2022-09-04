@@ -9,19 +9,20 @@ export default {
       const average =
         this.$store.state.features.reduce((acc, feat) => feat.rhcPsf + acc, 0) /
         this.$store.state.features.length;
-      return parseInt(average) || 0;
+      return average ? parseInt(average) : 0;
     },
     max() {
       const values = this.$store.state.features.map((feat) =>
         feat.rhcPsf && feat.rhcPsf > 0 ? feat.rhcPsf : this.average
       );
-      return Math.max(...values) || 0;
+      console.log('values', values);
+      return values.length > 0 ? Math.max(...values) : 0;
     },
     min() {
       const values = this.$store.state.features.map((feat) =>
         feat.rhcPsf && feat.rhcPsf > 0 ? feat.rhcPsf : this.average
       );
-      return Math.min(...values) || 0;
+      return values.length > 0 ? Math.min(...values) : 0;
     },
   },
 };

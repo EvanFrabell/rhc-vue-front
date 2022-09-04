@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import { Quasar } from 'quasar';
-import { initializeApp } from "firebase/app"
+import { initializeApp } from 'firebase/app';
 
 import router from './router';
 import store from './store';
@@ -34,6 +34,11 @@ myApp.use(Quasar, {
   plugins: {
     Notify,
   }, // import Quasar plugins and add here
+  config: {
+    notify: {
+      /* look at QuasarConfOptions from the API card */
+    },
+  },
 });
 
 // Assumes you have a <div id="app"></div> in your index.html

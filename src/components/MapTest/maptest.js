@@ -61,21 +61,21 @@ export default {
     addPopups(feature) {
       return (
         'Address: ' +
-        feature.address +
+        feature?.address +
         '</br>' +
         'Appraisal: $' +
-        feature.appraisalSale.toLocaleString('en-Us') +
+        feature?.appraisalSale.toLocaleString('en-Us') +
         '</br>' +
         '$/SqFt: $' +
-        feature.rhcPsf.toLocaleString('en-Us') +
+        feature?.rhcPsf.toLocaleString('en-Us') +
         '</p>'
       );
     },
   },
   watch: {
     latlong(newVal, oldVal) {
-      if (newVal !== oldVal) {
-        this.map.setView([newVal[0].coords[0], newVal[0].coords[1]], 12);
+      if (newVal !== oldVal && newVal[0]?.coords) {
+        this.map.setView([newVal[0]?.coords[0], newVal[0]?.coords[1]], 12);
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
           attribution:
             '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',

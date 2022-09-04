@@ -33,7 +33,19 @@
       @update:pagination="pagination = $event"
       flat
       bordered
-    />
+    >
+      <template v-slot:body-cell-name="tableData">
+        <q-td :props="tableData">
+          <div class="my-table-details">
+            <a
+              :href="`https//://wedge.hcauditor.org/view/re/${tableData.parcelId}/2021/summary`"
+              target="_blank"
+              >{{ tableData.parcelId }}</a
+            >
+          </div>
+        </q-td>
+      </template></q-table
+    >
     <div class="result-table_btns">
       <div class="table_btns_search">
         <q-btn
@@ -80,11 +92,7 @@
           <td class="text-center">{{ feature.appraisalSale }}</td>
           <td class="text-center">{{ feature.appraisalDate }}</td>
           <td class="text-center">{{ feature.zipCode }}</td>
-          <td class="text-center" style="display: none">
-            {{ feature.yearBuilt }}
-          </td>
-          <td class="text-center">{{ feature.totalRooms }}</td>
-          <td class="text-center" style="display: none">
+          <td class="text-center">
             {{ feature.bedrooms }}
           </td>
           <td class="text-center">{{ feature.fullBath }}</td>
