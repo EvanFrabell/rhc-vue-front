@@ -21,7 +21,8 @@
               hide-selected
               fill-input
               input-debounce="0"
-              :options="autoAddressOptions"
+              :options="addressFilter"
+              hint="Minimum 4 characters to trigger filtering"
               @filter="filterFn"
               @input-value="setSearchText"
               @keypress.enter="searchAddress"

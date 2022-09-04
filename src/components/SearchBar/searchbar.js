@@ -11,8 +11,8 @@ export default {
   name: 'search-bar',
   data() {
     return {
+      addressFilter: null,
       autoAddressOptions: [],
-      addressOptions: [],
       coordList: [],
       excelData: [],
       features: [],
@@ -45,19 +45,15 @@ export default {
           len = addList.length;
         // This is silly, but I didn't want to recreate the API
         while (i < len) {
-          addresses.push({ id: i, name: addList[i] });
+          addresses.push(addList[i]);
           i++;
         }
-        this.autoAddress = addresses;
+        this.autoAddressOptions = addresses;
+        console.log('addresses', this.autoAddressOptions);
       })
       .catch(() => {
         console.log('----ERROR----');
       });
-
-    // grab all the address's and put them into autoCompleteAddresses for auto-complete feature
-    this.addressOptions = autoCompleteAddresses.features.map(
-      (f) => f.properties.address
-    );
   },
   methods: {
     ...mapActions([
@@ -74,18 +70,18 @@ export default {
       this.setSearchText('');
       this.url = `https://rhc-backend.herokuapp.com/rhc/api/properties/address-radius?address=${this.searchText}`;
       this.FEATURES_BY_ADDRESS(this.url);
-      this.addressOptions = this.$store.state.features.map(
-        (f) => f.properties?.address
-      );
       this.closeDialog();
     },
     filterFn(val, update, abort) {
+      if (val.length < 4) {
+        abort();
+        return;
+      }
+
       update(() => {
         const needle = val.toLocaleLowerCase();
-        this.url = `https://rhc-backend.herokuapp.com/rhc/api/properties/address-radius?address=${this.searchText}`;
-        this.FEATURES_BY_ADDRESS(this.url);
-        this.autoAddressOptions = this.$store.state.features.filter((v) =>
-          v.toLocaleLowerCase().startsWith(val)
+        this.addressFilter = this.autoAddressOptions.filter(
+          (v) => v.toLocaleLowerCase().indexOf(needle) > -1
         );
       });
     },
